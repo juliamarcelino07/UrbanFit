@@ -304,69 +304,77 @@ a {
 
 
 /* Projetos */
-.projetos {
+.produtos {
+    padding: 64px 16px;
     display: flex;
     flex-direction: column;
     gap: 32px;
 }
 
-.projeto-container {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-}
-
-.projeto-card {
+.produto-container {
     display: flex;
     flex-direction: column;
     gap: 32px;
+}
+
+.produto-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    background: var(--secondary-bg-body);
+    transition: transform 0.3s ease;
+}
+
+.produto-card:hover {
+    transform: translateY(-5px);
 }
 
 .card-img {
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 2px 5px 10px rgb(234, 234, 234);
+    height: 300px;
     object-fit: cover;
-    object-position: center;
-    pointer-events: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card-body {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 25px;
+    gap: 16px;
 }
 
 .card-title { 
-    font-family: "Roboto", serif;
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 600;
+    color: var(--cor-texto);
+    text-transform: uppercase;
 }
 
 .card-description {
-    font-family: "Roboto", serif;
-    font-size: 20px;
-    font-weight: lighter;
+    font-size: 16px;
+    color: var(--texto-opaco);
 }
 
-.card-lista {  
+.card-list {  
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     list-style: none;
 }
 
-.icone-seta {
-    color: rgb(226, 124, 40);
+.card-item {  
+    padding: 8px 16px;
+    background: var(--bg-body);
+    border-radius: 20px;
     font-size: 14px;
+    color: var(--cor-texto);
+    transition: background-color 0.3s ease;
 }
 
-.card-item {  
-    /* Li */
-    margin-left: 10px;
-    padding: 0;
-    margin: 10px;
-    font-size: 18px;
-    margin-bottom: 0px;
+.card-item:hover {
+    background: var(--cor-borda);
 }
 
 /* sobre */
@@ -450,12 +458,26 @@ a {
     margin-left: 16px;
 }
 
-/* Accordions */
+.sobre-content2 .col2 {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.accordion {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
 .accordion-header {
     width: 100%;
     display: flex;
-    padding: 8px 16px;
+    padding: 16px;
     justify-content: space-between;
     align-items: center;
     border: 1px solid var(--cor-borda);
@@ -465,11 +487,6 @@ a {
     transition: ease-in-out .3s;
 }
 
-.accordion-header span {
-    color: var(--cor-texto);
-    text-transform: capitalize;
-}
-
 .accordion-body {
     display: none;
     padding: 20px;
@@ -477,6 +494,7 @@ a {
     align-items: flex-start;
     gap: 10px;
     border: 1px solid var(--cor-borda);
+    background: var(--secondary-bg-body);
 }
 
 .accordion-item.active .accordion-header {
@@ -600,7 +618,7 @@ footer a:hover {
 
 /* Estilização do Carrossel */
 
-.projetos h2 {
+.produtos h2 {
     margin-top: 50px;
 }
 
@@ -635,6 +653,29 @@ footer a:hover {
 /* Oculta os radio buttons */
 .carousel input { 
     display: none; 
+}
+
+.sobre-content2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--secondary-bg-body);
+    border-radius: 12px;
 }
 
 /* Muda o slide com os radio buttons */
@@ -696,7 +737,7 @@ footer a:hover {
     }
 
     #home,
-    .projetos,
+    .produtos,
     .sobre {
         padding: 128px 96px 64px 96px;
     }
@@ -722,38 +763,23 @@ footer a:hover {
 
 /* 992px */
 @media (min-width: 992px) {
-
-    .projeto-card {
+    .produto-card {
         flex-direction: row;
+        align-items: center;
     }
 
-    .projeto-card.card-reverse {
+    .produto-card.card-reverse {
         flex-direction: row-reverse;
-        justify-content: space-between;
     }
 
     .card-img {
-        width: 55%;
+        width: 50%;
+        height: 400px;
     }
 
-    .sobre {
-        gap: 10px;
-    }
-
-    .sobre-content1,
-    .sobre-content2 {
-        display: grid;
-        grid-template-columns: 40% 60%;
-        justify-content: flex-start;
-        gap: 64px;
-    }
-
-    .sobre-descricao h2 {
-        text-align: left;
-    }
-
-    .descricao-button {
-        justify-content: flex-start;
+    .card-body {
+        width: 50%;
+        padding: 0 32px;
     }
 }
 
@@ -797,8 +823,8 @@ footer a:hover {
         font-size: 55px;
     }
 
-    .projetos,
+    .produtos,
     .sobre {
-        padding: 160px 240px 64px;
+        padding: 96px 32px;
     }
 }
