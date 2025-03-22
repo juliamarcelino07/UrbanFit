@@ -368,7 +368,7 @@ a {
     padding: 8px 16px;
     background: var(--bg-body);
     border-radius: 20px;
-    font-size: 14px;
+    font-size: 18px;
     color: var(--cor-texto);
     transition: background-color 0.3s ease;
 }
